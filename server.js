@@ -16,3 +16,7 @@ server.on('request', (req, res) => {
 process.on('message', msg => {
   console.log(`Message from master ${JSON.stringify(msg)}`)
 });
+
+setTimeout(() => {
+  process.exit(1); // exit by random timeout
+}, Math.random() * 10000)
